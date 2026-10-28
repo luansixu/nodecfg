@@ -1,0 +1,279 @@
+# 新加坡可用节点 28 个 @ 2026-10-28 14:31:06
+# 全部通过 https://www.google.com/generate_204 真实穿透验证
+mixed-port: 7890
+bind-address: 127.0.0.1
+allow-lan: false
+mode: rule
+log-level: warning
+external-controller: 127.0.0.1:9097
+proxies:
+- cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    host: 817aa69.default.nintendo.com:112719
+    mode: tls
+  port: 2377
+  server: 18.143.63.164
+  type: ss
+  udp: true
+  name: SG01 125ms ss
+- password: '1234'
+  port: 2080
+  server: 13.212.14.88
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG02 166ms http
+- password: '1234'
+  port: 2080
+  server: 13.212.235.123
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG03 168ms http
+- password: '1234'
+  port: 2080
+  server: 13.250.6.249
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG04 170ms http
+- password: '1234'
+  port: 2080
+  server: 13.212.190.30
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG05 174ms http
+- password: null
+  port: 9090
+  server: 167.99.74.174
+  type: http
+  username: null
+  name: SG06 174ms http
+- password: '1234'
+  port: 2080
+  server: 13.212.207.226
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG07 177ms http
+- password: '1234'
+  port: 2080
+  server: 13.250.8.222
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG08 177ms http
+- password: '1234'
+  port: 2080
+  server: 13.229.54.109
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG09 177ms http
+- password: '1234'
+  port: 2080
+  server: 54.251.149.207
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG10 178ms http
+- password: '1234'
+  port: 2080
+  server: 18.143.167.6
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG11 178ms http
+- password: '1234'
+  port: 2080
+  server: 52.221.234.145
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG12 178ms http
+- port: 9090
+  server: 167.172.76.176
+  type: http
+  name: SG13 178ms http
+- password: '1234'
+  port: 2080
+  server: 13.212.87.168
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG14 179ms http
+- password: None
+  port: 9090
+  server: 152.42.170.187
+  type: http
+  name: SG15 181ms http
+- port: 9090
+  server: 128.199.254.13
+  type: http
+  name: SG16 183ms http
+- network: ws
+  port: 443
+  server: v2.drsachi.com
+  type: vless
+  udp: true
+  uuid: 270c3fa5-0293-4d68-875c-6cdc3bdc5b84
+  ws-opts:
+    headers:
+      Host: v2.drsachi.com
+    path: /
+  name: SG17 185ms vless
+- password: None
+  port: 9090
+  server: 104.248.151.93
+  type: http
+  name: SG18 191ms http
+- password: '1234'
+  port: 2080
+  server: 18.143.144.220
+  skip-cert-verify: true
+  type: http
+  udp: true
+  username: '1234'
+  name: SG19 214ms http
+- server: 104.18.0.181
+  port: 2082
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  tfo: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /fp
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+  udp: true
+  servername: hhlfy.twiladaphne.ndjp.net
+  name: SG20 219ms vless
+- server: 172.64.150.28
+  port: 2082
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  tfo: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /fp
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+  udp: true
+  name: SG21 229ms vless
+- server: 104.16.162.89
+  port: 8080
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  tfo: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+  udp: true
+  name: SG22 240ms vless
+- password: '8888'
+  port: 1080
+  server: 47.236.168.243
+  skip-cert-verify: true
+  type: socks5
+  username: '8888'
+  name: SG23 249ms socks5
+- password: null
+  port: 9090
+  server: 128.199.113.85
+  type: http
+  username: null
+  name: SG24 303ms http
+- port: 443
+  server: 43.160.239.37
+  skip-cert-verify: true
+  tls: true
+  type: http
+  name: SG25 388ms http
+- port: 443
+  server: 154.26.139.24
+  skip-cert-verify: true
+  tls: true
+  type: http
+  name: SG26 446ms http
+- type: vmess
+  server: 8.219.97.17
+  port: 443
+  cipher: auto
+  uuid: a9f4de8b-68f1-44b6-b6a2-1db60940503a
+  alterId: 0
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: wjofHsQtEuEywxEq.v.3dns.vip
+  servername: wjofHsQtEuEywxEq.v.3dns.vip
+  name: SG27 848ms vmess
+- type: vmess
+  server: wjofHsQtEuEywxEq.v.3dns.vip
+  port: 443
+  cipher: auto
+  uuid: a9f4de8b-68f1-44b6-b6a2-1db60940503a
+  alterId: 0
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: wjofHsQtEuEywxEq.v.3dns.vip
+  servername: wjofHsQtEuEywxEq.v.3dns.vip
+  name: SG28 3604ms vmess
+proxy-groups:
+  - name: SG-AUTO
+    type: url-test
+    url: https://www.google.com/generate_204
+    interval: 180
+    tolerance: 50
+    lazy: false
+    proxies:
+      - "SG01 125ms ss"
+      - "SG02 166ms http"
+      - "SG03 168ms http"
+      - "SG04 170ms http"
+      - "SG05 174ms http"
+      - "SG06 174ms http"
+      - "SG07 177ms http"
+      - "SG08 177ms http"
+      - "SG09 177ms http"
+      - "SG10 178ms http"
+      - "SG11 178ms http"
+      - "SG12 178ms http"
+      - "SG13 178ms http"
+      - "SG14 179ms http"
+      - "SG15 181ms http"
+      - "SG16 183ms http"
+      - "SG17 185ms vless"
+      - "SG18 191ms http"
+      - "SG19 214ms http"
+      - "SG20 219ms vless"
+      - "SG21 229ms vless"
+      - "SG22 240ms vless"
+      - "SG23 249ms socks5"
+      - "SG24 303ms http"
+      - "SG25 388ms http"
+      - "SG26 446ms http"
+      - "SG27 848ms vmess"
+      - "SG28 3604ms vmess"
+  - name: PROXY
+    type: select
+    proxies:
+      - SG-AUTO
+      - DIRECT
+rules:
+  - MATCH,PROXY
