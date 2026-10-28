@@ -21,7 +21,10 @@ XRAY_CONF="/usr/local/etc/xray/config.json"
 green() { printf "\033[32m%s\033[0m\n" "$*"; }
 yellow() { printf "\033[33m%s\033[0m\n" "$*"; }
 
-[[ $EUID -ne 0 ]] && { echo "请用 root 运行（sudo -i）"; exit 1; }
+if [[ $EUID -ne 0 ]]; then
+  echo "请用 root 运行（sudo -i）"
+  exit 1
+fi
 
 green "[1/6] 更新系统并安装依赖"
 export DEBIAN_FRONTEND=noninteractive
