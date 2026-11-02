@@ -50,6 +50,20 @@ dns:
       - 240.0.0.0/4
 
 proxies:
+- server: 104.16.162.89
+  port: 8080
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  tfo: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+  udp: true
+  name: SG04 196ms vless
 - server: 104.18.0.181
   port: 2082
   type: vless
@@ -64,7 +78,7 @@ proxies:
       Host: hhlfy.twiladaphne.ndjp.net
   udp: true
   servername: hhlfy.twiladaphne.ndjp.net
-  name: SG03 211ms vless
+  name: SG05 197ms vless
 - server: 172.64.150.28
   port: 2082
   type: vless
@@ -78,21 +92,7 @@ proxies:
     headers:
       Host: hhlfy.twiladaphne.ndjp.net
   udp: true
-  name: SG04 212ms vless
-- server: 104.16.162.89
-  port: 8080
-  type: vless
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  tls: false
-  tfo: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-  udp: true
-  name: SG08 267ms vless
+  name: SG06 201ms vless
 - type: vless
   server: sg1.zestapp778.com
   port: 56984
@@ -104,7 +104,7 @@ proxies:
   packet-encoding: xudp
   network: tcp
   servername: sg1.zestapp778.com
-  name: SG11 343ms vless
+  name: SG15 340ms vless
 - type: vmess
   server: wjofHsQtEuEywxEq.v.3dns.vip
   port: 443
@@ -118,32 +118,50 @@ proxies:
     headers:
       Host: wjofHsQtEuEywxEq.v.3dns.vip
   servername: wjofHsQtEuEywxEq.v.3dns.vip
-  name: SG12 424ms vmess
+  name: SG16 426ms vmess
+- port: 9090
+  server: 128.199.116.219
+  type: http
+  name: SG01 174ms http
 - port: 9090
   server: 167.172.76.176
   type: http
-  name: SG01 170ms http
-- password: null
-  port: 9090
-  server: 104.248.151.93
-  type: http
-  username: null
   name: SG02 176ms http
 - password: null
-  port: 9443
-  server: 152.233.9.239
-  skip-cert-verify: true
-  tls: true
+  port: 9090
+  server: 128.199.113.85
   type: http
   username: null
-  name: SG05 213ms http
+  name: SG03 182ms http
 - port: 9443
   server: 149.88.99.209
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-  name: SG06 218ms http
+  name: SG07 208ms http
+- password: '1234'
+  port: 2080
+  server: 13.250.6.249
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG08 210ms http
+- password: '1234'
+  port: 2080
+  server: 52.221.234.145
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  name: SG09 210ms http
+- password: '1234'
+  port: 2080
+  server: 18.143.144.220
+  skip-cert-verify: true
+  type: http
+  udp: true
+  username: '1234'
+  name: SG10 211ms http
 - password: null
   port: 443
   server: 156.146.56.97
@@ -151,47 +169,29 @@ proxies:
   tls: true
   type: http
   username: null
-  name: SG07 223ms http
-- port: 443
-  server: 154.26.139.24
-  skip-cert-verify: true
-  tls: true
-  type: http
-  name: SG09 269ms http
-- password: '1234'
-  port: 2080
-  server: 13.250.6.249
-  skip-cert-verify: true
-  type: http
-  username: '1234'
-  name: SG13 833ms http
-- password: '1234'
-  port: 2080
-  server: 54.151.160.36
-  skip-cert-verify: true
-  type: http
-  username: '1234'
-  name: SG14 835ms http
+  name: SG11 225ms http
 - password: '1234'
   port: 2080
   server: 47.129.174.248
   skip-cert-verify: true
   type: http
   username: '1234'
-  name: SG15 836ms http
+  name: SG12 228ms http
 - password: null
-  port: 9090
-  server: 128.199.113.85
+  port: 443
+  server: 154.26.139.24
+  skip-cert-verify: true
+  tls: true
   type: http
   username: null
-  name: SG16 1195ms http
+  name: SG14 319ms http
 - password: '8888'
   port: 1080
   server: 47.236.168.243
   skip-cert-verify: true
   type: socks5
   username: '8888'
-  name: SG10 282ms socks5
+  name: SG13 250ms socks5
 
 proxy-groups:
   # 总入口：默认走故障转移，可手动切到自动选择或直连
@@ -210,22 +210,22 @@ proxy-groups:
     tolerance: 30
     lazy: false
     proxies:
-      - "SG03 211ms vless"
-      - "SG04 212ms vless"
-      - "SG08 267ms vless"
-      - "SG11 343ms vless"
-      - "SG12 424ms vmess"
-      - "SG01 170ms http"
+      - "SG04 196ms vless"
+      - "SG05 197ms vless"
+      - "SG06 201ms vless"
+      - "SG15 340ms vless"
+      - "SG16 426ms vmess"
+      - "SG01 174ms http"
       - "SG02 176ms http"
-      - "SG05 213ms http"
-      - "SG06 218ms http"
-      - "SG07 223ms http"
-      - "SG09 269ms http"
-      - "SG13 833ms http"
-      - "SG14 835ms http"
-      - "SG15 836ms http"
-      - "SG16 1195ms http"
-      - "SG10 282ms socks5"
+      - "SG03 182ms http"
+      - "SG07 208ms http"
+      - "SG08 210ms http"
+      - "SG09 210ms http"
+      - "SG10 211ms http"
+      - "SG11 225ms http"
+      - "SG12 228ms http"
+      - "SG14 319ms http"
+      - "SG13 250ms socks5"
   # 故障转移：按顺序试，第一个可用的就用，最稳
   - name: 故障转移
     type: fallback
@@ -233,42 +233,42 @@ proxy-groups:
     interval: 120
     lazy: false
     proxies:
-      - "SG03 211ms vless"
-      - "SG04 212ms vless"
-      - "SG08 267ms vless"
-      - "SG11 343ms vless"
-      - "SG12 424ms vmess"
-      - "SG01 170ms http"
+      - "SG04 196ms vless"
+      - "SG05 197ms vless"
+      - "SG06 201ms vless"
+      - "SG15 340ms vless"
+      - "SG16 426ms vmess"
+      - "SG01 174ms http"
       - "SG02 176ms http"
-      - "SG05 213ms http"
-      - "SG06 218ms http"
-      - "SG07 223ms http"
-      - "SG09 269ms http"
-      - "SG13 833ms http"
-      - "SG14 835ms http"
-      - "SG15 836ms http"
-      - "SG16 1195ms http"
-      - "SG10 282ms socks5"
+      - "SG03 182ms http"
+      - "SG07 208ms http"
+      - "SG08 210ms http"
+      - "SG09 210ms http"
+      - "SG10 211ms http"
+      - "SG11 225ms http"
+      - "SG12 228ms http"
+      - "SG14 319ms http"
+      - "SG13 250ms socks5"
       - DIRECT
   - name: 全部节点
     type: select
     proxies:
-      - "SG03 211ms vless"
-      - "SG04 212ms vless"
-      - "SG08 267ms vless"
-      - "SG11 343ms vless"
-      - "SG12 424ms vmess"
-      - "SG01 170ms http"
+      - "SG04 196ms vless"
+      - "SG05 197ms vless"
+      - "SG06 201ms vless"
+      - "SG15 340ms vless"
+      - "SG16 426ms vmess"
+      - "SG01 174ms http"
       - "SG02 176ms http"
-      - "SG05 213ms http"
-      - "SG06 218ms http"
-      - "SG07 223ms http"
-      - "SG09 269ms http"
-      - "SG13 833ms http"
-      - "SG14 835ms http"
-      - "SG15 836ms http"
-      - "SG16 1195ms http"
-      - "SG10 282ms socks5"
+      - "SG03 182ms http"
+      - "SG07 208ms http"
+      - "SG08 210ms http"
+      - "SG09 210ms http"
+      - "SG10 211ms http"
+      - "SG11 225ms http"
+      - "SG12 228ms http"
+      - "SG14 319ms http"
+      - "SG13 250ms socks5"
 
 rules:
   # 内网直连
