@@ -5,7 +5,7 @@
 #   - 新增故障转移组：节点挂掉自动切下一个
 #   - 测速间隔 120s、容差 30ms：节点劣化后 2 分钟内被换掉
 #   - DNS 走 fake-ip + 国内 DoH，减少解析耗时
-# 节点数：16
+# 节点数：18
 # ============================================================
 mixed-port: 7890
 allow-lan: false
@@ -50,34 +50,6 @@ dns:
       - 240.0.0.0/4
 
 proxies:
-- server: 172.64.150.28
-  port: 2082
-  type: vless
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  tls: false
-  tfo: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /fp
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-  udp: true
-  name: SG04 201ms vless
-- server: 104.16.162.89
-  port: 8080
-  type: vless
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  tls: false
-  tfo: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-  udp: true
-  name: SG09 205ms vless
 - server: 104.18.0.181
   port: 2082
   type: vless
@@ -92,19 +64,35 @@ proxies:
       Host: hhlfy.twiladaphne.ndjp.net
   udp: true
   servername: hhlfy.twiladaphne.ndjp.net
-  name: SG12 251ms vless
-- type: vless
-  server: sg1.zestapp778.com
-  port: 56984
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  udp: true
-  tls: true
-  client-fingerprint: chrome
+  name: SG08 198ms vless
+- server: 104.16.162.89
+  port: 8080
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  tfo: true
   skip-cert-verify: false
-  packet-encoding: xudp
-  network: tcp
-  servername: sg1.zestapp778.com
-  name: SG16 6563ms vless
+  network: ws
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+  udp: true
+  name: SG10 215ms vless
+- server: 172.64.150.28
+  port: 2082
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  tfo: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /fp
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+  udp: true
+  name: SG11 217ms vless
 - type: vmess
   server: wjofHsQtEuEywxEq.v.3dns.vip
   port: 443
@@ -118,60 +106,65 @@ proxies:
     headers:
       Host: wjofHsQtEuEywxEq.v.3dns.vip
   servername: wjofHsQtEuEywxEq.v.3dns.vip
-  name: SG14 440ms vmess
-- password: '1234'
-  port: 2080
-  server: 54.151.160.36
+  name: SG16 442ms vmess
+- network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 172.104.161.198
   skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+  name: SG13 255ms trojan
+- port: 9090
+  server: 104.248.151.93
   type: http
-  username: '1234'
-  name: SG01 169ms http
+  name: SG01 167ms http
 - password: null
   port: 9090
   server: 128.199.113.85
   type: http
   username: null
-  name: SG02 174ms http
+  name: SG02 168ms http
 - port: 9090
   server: 128.199.116.219
   type: http
-  name: SG03 190ms http
-- password: '1234'
-  port: 2080
-  server: 47.129.174.248
-  skip-cert-verify: true
+  name: SG03 173ms http
+- port: 9090
+  server: 128.199.121.61
   type: http
-  username: '1234'
-  name: SG05 202ms http
-- password: '1234'
-  port: 2080
-  server: 13.250.6.249
+  name: SG04 175ms http
+- password: ''
+  port: 9090
+  server: 146.190.80.158
   skip-cert-verify: true
-  type: http
-  username: '1234'
-  name: SG06 203ms http
-- password: '1234'
-  port: 2080
-  server: 52.221.234.145
-  skip-cert-verify: true
-  type: http
-  username: '1234'
-  name: SG07 203ms http
-- password: '1234'
-  port: 2080
-  server: 18.143.144.220
-  skip-cert-verify: true
+  sub_tag: K001-260618
   type: http
   udp: true
-  username: '1234'
-  name: SG08 204ms http
-- port: 9443
-  server: 149.88.99.209
+  username: ''
+  name: SG05 177ms http
+- port: 9090
+  server: 167.172.76.176
+  type: http
+  name: SG06 182ms http
+- password: None
+  port: 9090
+  server: 167.99.74.174
+  type: http
+  name: SG07 188ms http
+- password: ''
+  port: 9090
+  server: 159.223.41.216
   skip-cert-verify: true
-  tls: true
+  sub_tag: K001-260618
   type: http
   udp: true
-  name: SG10 212ms http
+  username: ''
+  name: SG09 207ms http
 - password: null
   port: 443
   server: 156.146.56.97
@@ -179,22 +172,32 @@ proxies:
   tls: true
   type: http
   username: null
-  name: SG11 226ms http
-- password: null
-  port: 443
+  name: SG12 225ms http
+- port: 443
   server: 154.26.139.24
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
-  name: SG13 367ms http
+  name: SG15 400ms http
+- password: e4b72b531a2d10900519
+  port: 443
+  server: 104.248.148.240
+  sni: us.acskey.co
+  tls: true
+  type: http
+  username: testuser1
+  name: SG18 3466ms http
+- port: 9999
+  server: 8.219.122.8
+  type: socks5
+  name: SG14 371ms socks5
 - password: '8888'
   port: 1080
   server: 47.236.168.243
   skip-cert-verify: true
   type: socks5
   username: '8888'
-  name: SG15 470ms socks5
+  name: SG17 665ms socks5
 
 proxy-groups:
   # 总入口：默认走故障转移，可手动切到自动选择或直连
@@ -213,22 +216,24 @@ proxy-groups:
     tolerance: 30
     lazy: false
     proxies:
-      - "SG04 201ms vless"
-      - "SG09 205ms vless"
-      - "SG12 251ms vless"
-      - "SG16 6563ms vless"
-      - "SG14 440ms vmess"
-      - "SG01 169ms http"
-      - "SG02 174ms http"
-      - "SG03 190ms http"
-      - "SG05 202ms http"
-      - "SG06 203ms http"
-      - "SG07 203ms http"
-      - "SG08 204ms http"
-      - "SG10 212ms http"
-      - "SG11 226ms http"
-      - "SG13 367ms http"
-      - "SG15 470ms socks5"
+      - "SG08 198ms vless"
+      - "SG10 215ms vless"
+      - "SG11 217ms vless"
+      - "SG16 442ms vmess"
+      - "SG13 255ms trojan"
+      - "SG01 167ms http"
+      - "SG02 168ms http"
+      - "SG03 173ms http"
+      - "SG04 175ms http"
+      - "SG05 177ms http"
+      - "SG06 182ms http"
+      - "SG07 188ms http"
+      - "SG09 207ms http"
+      - "SG12 225ms http"
+      - "SG15 400ms http"
+      - "SG18 3466ms http"
+      - "SG14 371ms socks5"
+      - "SG17 665ms socks5"
   # 故障转移：按顺序试，第一个可用的就用，最稳
   - name: 故障转移
     type: fallback
@@ -236,42 +241,46 @@ proxy-groups:
     interval: 120
     lazy: false
     proxies:
-      - "SG04 201ms vless"
-      - "SG09 205ms vless"
-      - "SG12 251ms vless"
-      - "SG16 6563ms vless"
-      - "SG14 440ms vmess"
-      - "SG01 169ms http"
-      - "SG02 174ms http"
-      - "SG03 190ms http"
-      - "SG05 202ms http"
-      - "SG06 203ms http"
-      - "SG07 203ms http"
-      - "SG08 204ms http"
-      - "SG10 212ms http"
-      - "SG11 226ms http"
-      - "SG13 367ms http"
-      - "SG15 470ms socks5"
+      - "SG08 198ms vless"
+      - "SG10 215ms vless"
+      - "SG11 217ms vless"
+      - "SG16 442ms vmess"
+      - "SG13 255ms trojan"
+      - "SG01 167ms http"
+      - "SG02 168ms http"
+      - "SG03 173ms http"
+      - "SG04 175ms http"
+      - "SG05 177ms http"
+      - "SG06 182ms http"
+      - "SG07 188ms http"
+      - "SG09 207ms http"
+      - "SG12 225ms http"
+      - "SG15 400ms http"
+      - "SG18 3466ms http"
+      - "SG14 371ms socks5"
+      - "SG17 665ms socks5"
       - DIRECT
   - name: 全部节点
     type: select
     proxies:
-      - "SG04 201ms vless"
-      - "SG09 205ms vless"
-      - "SG12 251ms vless"
-      - "SG16 6563ms vless"
-      - "SG14 440ms vmess"
-      - "SG01 169ms http"
-      - "SG02 174ms http"
-      - "SG03 190ms http"
-      - "SG05 202ms http"
-      - "SG06 203ms http"
-      - "SG07 203ms http"
-      - "SG08 204ms http"
-      - "SG10 212ms http"
-      - "SG11 226ms http"
-      - "SG13 367ms http"
-      - "SG15 470ms socks5"
+      - "SG08 198ms vless"
+      - "SG10 215ms vless"
+      - "SG11 217ms vless"
+      - "SG16 442ms vmess"
+      - "SG13 255ms trojan"
+      - "SG01 167ms http"
+      - "SG02 168ms http"
+      - "SG03 173ms http"
+      - "SG04 175ms http"
+      - "SG05 177ms http"
+      - "SG06 182ms http"
+      - "SG07 188ms http"
+      - "SG09 207ms http"
+      - "SG12 225ms http"
+      - "SG15 400ms http"
+      - "SG18 3466ms http"
+      - "SG14 371ms socks5"
+      - "SG17 665ms socks5"
 
 rules:
   # 内网直连
